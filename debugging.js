@@ -16,8 +16,6 @@ const pairs = {
  * @returns An object with information about the best performing pair
  */
 const findBestPair = (pairs, [start, end]) => {
-  const maxSlopeReducer = (acc, cmp) => acc = (cmp.slope > acc.slope) ? cmp : acc
-
   return Object.entries(pairs).map(([pair, data]) => {
     const slope = (data[end] - data[start]) / (end - start);
     return {pair, slope};
